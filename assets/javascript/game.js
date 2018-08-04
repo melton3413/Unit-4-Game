@@ -1,3 +1,5 @@
+//-- New stuff ---
+
 // intialize variables
 // define targetNumber/counter so that when they are set within a function, they still have a global scope
 var targetNumber;
@@ -5,6 +7,11 @@ var counter;
 // initialize wins/losses to zero
 var wins = 0;
 var losses = 0;
+
+// ------------------------
+
+
+
 // Now for the hard part. Creating multiple crystals each with their own unique number value.
 // We begin by expanding our array to include four options.
 var numberOptions = [10, 5, 3, 7];
@@ -34,6 +41,8 @@ $(".crystal-image").on("click", function() {
   // We then add the crystalValue to the user's "counter" which is a global variable.
   // Every click, from every crystal adds to the global counter.
   counter += crystalValue;
+
+  // ------- New stuff ---------
   // update score 
   $("#yourScore").text(counter);
   // All of the same game win-lose logic applies. So the rest remains unchanged.
@@ -53,19 +62,27 @@ $(".crystal-image").on("click", function() {
     startGame();
   }
 });
+
+
 // define all things we want to happen when the game restarts
 function startGame(){
+
   // find new random number
   targetNumber = Math.floor(20 + (Math.random() * 60));
   // update number to guess on screen
   $("#number-to-guess").text(targetNumber);
+
   // reset counter
   counter = 0;
   // update counter on screen
   $("#yourScore").text(counter);
+
   // update wins on screen
   $("#wins").text(wins);
+
   // update losses on screen
   $("#losses").text(losses);
 }
 startGame();
+
+// -----
