@@ -1,5 +1,5 @@
 
-  var targetNumber = 50;
+  var targetNumber = 53;
 
   $("#number-to-guess").text(targetNumber);
 
